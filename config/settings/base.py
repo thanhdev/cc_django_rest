@@ -305,7 +305,7 @@ ACCOUNT_AUTHENTICATION_METHOD = "username"
 # https://docs.allauth.org/en/latest/account/configuration.html
 ACCOUNT_EMAIL_REQUIRED = True
 # https://docs.allauth.org/en/latest/account/configuration.html
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = "optional"
 # https://docs.allauth.org/en/latest/account/configuration.html
 ACCOUNT_ADAPTER = "cc_django_rest.users.adapters.AccountAdapter"
 # https://docs.allauth.org/en/latest/account/forms.html

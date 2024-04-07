@@ -11,7 +11,8 @@ from .base import env
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.list(
-    "DJANGO_ALLOWED_HOSTS", default=["tthanh.eastasia.cloudapp.azure.com"]
+    "DJANGO_ALLOWED_HOSTS",
+    default=["tthanh.eastasia.cloudapp.azure.com"],
 )
 
 # DATABASES
@@ -99,6 +100,10 @@ INSTALLED_APPS += ["anymail"]
 # https://anymail.readthedocs.io/en/stable/installation/#anymail-settings-reference
 # https://anymail.readthedocs.io/en/stable/esps
 # EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = env(
+    "DJANGO_EMAIL_BACKEND",
+    default="django.core.mail.backends.console.EmailBackend",
+)
 ANYMAIL = {}
 
 
