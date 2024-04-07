@@ -1,6 +1,6 @@
 # Translations for the CC Django Rest project
 # Copyright (C) 2024 tthanh
-# tthanh <tthanh@example.com>, 2024.
+# tthanh <tthanh@tthanh.eastasia.cloudapp.azure.com>, 2024.
 #
 #, fuzzy
 msgid ""
