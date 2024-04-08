@@ -4,6 +4,11 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
+# Build frontend
+cd /app/angular
+npm install
+npm run build
+cd /app
 
 python manage.py migrate
 exec python manage.py runserver_plus 0.0.0.0:8000

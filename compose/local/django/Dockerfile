@@ -51,6 +51,8 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
   libpq-dev \
   # Translations dependencies
   gettext \
+  # npm \
+  npm \
   # cleaning up unused files
   && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
   && rm -rf /var/lib/apt/lists/*
@@ -87,5 +89,8 @@ RUN chmod +x /start-flower
 
 # copy application code to WORKDIR
 COPY . ${APP_HOME}
+
+# install node dependencies
+RUN cd ${APP_HOME}/angular && npm install
 
 ENTRYPOINT ["/entrypoint"]
