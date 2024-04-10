@@ -6,7 +6,6 @@ set -o nounset
 
 # Build frontend
 cd /app/angular
-npm install
 npm run build
 cd /app
 

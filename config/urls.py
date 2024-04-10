@@ -67,6 +67,3 @@ if settings.DEBUG:
         import debug_toolbar
 
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
-
-# Angular
-urlpatterns += static("/", document_root=settings.ANGULAR_ROOT)

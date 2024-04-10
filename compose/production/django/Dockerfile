@@ -88,7 +88,9 @@ COPY --chown=django:django . ${APP_HOME}
 # make django owner of the WORKDIR directory as well.
 RUN chown -R django:django ${APP_HOME}
 
-RUN cd ${APP_HOME}/angular && npm install && cd ${APP_HOME}
+# Install node dependencies
+COPY --chown=django:django angular/package*.json ${APP_HOME}
+RUN npm install
 
 USER django
 

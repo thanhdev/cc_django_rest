@@ -86,11 +86,11 @@ COPY ./compose/local/django/celery/flower/start /start-flower
 RUN sed -i 's/\r$//g' /start-flower
 RUN chmod +x /start-flower
 
+# Install node dependencies
+COPY angular/package*.json ${APP_HOME}
+RUN npm install
 
 # copy application code to WORKDIR
 COPY . ${APP_HOME}
-
-# install node dependencies
-RUN cd ${APP_HOME}/angular && npm install
 
 ENTRYPOINT ["/entrypoint"]
