@@ -204,6 +204,8 @@
       <h1>Hello, {{ name }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
       <p>Your number of users is: {{ userCount }}</p>
+      <input [(ngModel)]="newName" placeholder="Enter new name">
+      <button (click)="updateUserName()">Update</button>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
